@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bella Maguire's AI for Interdisciplinary Design Portfolio."
+    />
+    <title>AI for Interdisciplinary Design Portfolio — Bella Maguire</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-frame hero">
+        <h1>AI for Interdisciplinary<br />Design Portfolio</h1>
+        <p class="name">Bella Maguire</p>
+      </header>
+
+      <section class="page-frame flow" aria-labelledby="flow-title">
+        <h2 class="visually-hidden" id="flow-title">Interactive color flow</h2>
+        <p class="flow-instruction">Hover or click to see the colors flow.</p>
+        <div class="flow-canvas-frame">
+          <canvas
+            id="flow-canvas"
+            aria-label="An interactive field of flowing red, ochre, green, and cream color. Hover to reshape the flow or click to send a ripple through it."
+          ></canvas>
+        </div>
+      </section>
+
+      <section class="page-frame project-grid" aria-labelledby="projects-title">
+        <h2 class="visually-hidden" id="projects-title">Projects</h2>
+
+        <a class="project-preview" href="album-cover.html">
+          <span class="project-image project-image--cover">
+            <img
+              src="assets/images/album-cover-final.webp"
+              alt="Album cover for Losing Control by Poolside, with flowing red, green, ochre, and cream forms"
+            />
+          </span>
+          <span class="project-title">Album Cover Design</span>
+        </a>
+
+        <a class="project-preview" href="studio.html">
+          <span class="project-image project-image--studio">
+            <img
+              src="assets/images/studio-final.webp"
+              alt="Rendered interior of the FutureSpace multidisciplinary design studio"
+            />
+          </span>
+          <span class="project-title">FutureSpace Studio Environment</span>
+        </a>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
