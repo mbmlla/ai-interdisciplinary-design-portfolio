@@ -367,6 +367,115 @@
           their memory of it.
         </p>
 
+        <div class="memory-demo" data-memory-demo>
+          <div class="memory-demo__header">
+            <div>
+              <p class="proposal-kicker">Interactive study</p>
+              <h3>Return the objects to the room</h3>
+              <p>
+                Select or drag each object to the location where it belonged. The room
+                responds to correct and incorrect memories.
+              </p>
+            </div>
+            <button
+              class="memory-sound"
+              type="button"
+              aria-pressed="false"
+              aria-describedby="memory-sound-note"
+              data-sound-toggle
+            >
+              Sound off
+            </button>
+          </div>
+
+          <p class="memory-sound-note" id="memory-sound-note">
+            Sound is optional and never starts automatically.
+          </p>
+
+          <div class="memory-demo__layout">
+            <div class="memory-objects" aria-label="Objects to return">
+              <p class="memory-label">Displaced objects</p>
+              <div class="memory-object-list">
+                <button
+                  class="memory-object"
+                  type="button"
+                  draggable="true"
+                  aria-pressed="false"
+                  data-memory-object="photo"
+                  data-memory-target="wall"
+                >
+                  <span class="memory-object__shape memory-object__shape--photo" aria-hidden="true"></span>
+                  Photograph
+                </button>
+                <button
+                  class="memory-object"
+                  type="button"
+                  draggable="true"
+                  aria-pressed="false"
+                  data-memory-object="rabbit"
+                  data-memory-target="bed"
+                >
+                  <span class="memory-object__shape memory-object__shape--rabbit" aria-hidden="true"></span>
+                  Rabbit
+                </button>
+                <button
+                  class="memory-object"
+                  type="button"
+                  draggable="true"
+                  aria-pressed="false"
+                  data-memory-object="trophy"
+                  data-memory-target="shelf"
+                >
+                  <span class="memory-object__shape memory-object__shape--trophy" aria-hidden="true"></span>
+                  Trophy
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-room" aria-label="Garbled bedroom with three remembered locations">
+              <div class="memory-room__glow" aria-hidden="true"></div>
+              <div
+                class="memory-location memory-location--wall"
+                role="button"
+                tabindex="0"
+                data-memory-location="wall"
+                aria-label="Place selected object on the wall"
+              >
+                <span class="memory-location__name">Wall</span>
+                <span class="memory-location__placed" aria-hidden="true"></span>
+              </div>
+              <div
+                class="memory-location memory-location--shelf"
+                role="button"
+                tabindex="0"
+                data-memory-location="shelf"
+                aria-label="Place selected object on the shelf"
+              >
+                <span class="memory-location__name">Shelf</span>
+                <span class="memory-location__placed" aria-hidden="true"></span>
+              </div>
+              <div
+                class="memory-location memory-location--bed"
+                role="button"
+                tabindex="0"
+                data-memory-location="bed"
+                aria-label="Place selected object on the bed"
+              >
+                <span class="memory-location__name">Bed</span>
+                <span class="memory-location__placed" aria-hidden="true"></span>
+              </div>
+              <div class="memory-room__floor" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="memory-demo__footer">
+            <p class="memory-status" role="status" aria-live="polite" data-memory-status>
+              Select an object to begin. Memory 0 of 3.
+            </p>
+            <button class="memory-reset" type="button" data-memory-reset>Reset memory</button>
+          </div>
+        </div>
+
         <h3 class="proposal-subheading">Flowchart</h3>
         <ol class="journey-flow">
           <li>
@@ -639,5 +748,6 @@
         <a href="index.html">Back to home</a>
       </nav>
     </main>
+    <script src="game-proposal.js"></script>
   </body>
 </html>
