@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Room Remembers, a surreal 2D exploration game proposal by Bella Maguire."
+    />
+    <title>The Room Remembers — Bella Maguire</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-page proposal-page">
+    <header class="page-frame project-nav">
+      <a class="project-nav__name" href="index.html">Bella Maguire</a>
+      <nav class="project-nav__links" aria-label="Portfolio navigation">
+        <a href="index.html">Home</a>
+        <a href="album-cover.html">Album Cover</a>
+        <a href="studio.html">FutureSpace Studio</a>
+        <a href="game-proposal.html" aria-current="page">Game Proposal</a>
+      </nav>
+    </header>
+
+    <main>
+      <header class="page-frame project-header proposal-header">
+        <p class="proposal-kicker">Game proposal</p>
+        <h1 class="project-heading">The Room Remembers</h1>
+        <p class="project-intro">
+          A surreal 2D exploration game about memory, identity, and unreliable
+          perception.
+        </p>
+      </header>
+
+      <figure class="page-frame proposal-hero">
+        <img
+          src="assets/images/room-remembers-concept.jpg"
+          alt="A warm childhood bedroom splitting open to reveal a dark inverted version, with a flowing featureless figure in each space"
+          width="1600"
+          height="800"
+        />
+        <figcaption>Concept by Bella Maguire; image generated with ChatGPT, 2026.</figcaption>
+      </figure>
+
+      <nav class="page-frame proposal-index" aria-label="Game proposal sections">
+        <a href="#introduction"><span>01</span> Introduce the game</a>
+        <a href="#case-study"><span>02</span> Case study</a>
+        <a href="#ai-discussion"><span>03</span> Critical discussion with AI</a>
+        <a href="#narrative"><span>04</span> Narrative and concept</a>
+        <a href="#player-journey"><span>05</span> Interaction and player journey</a>
+        <a href="#style-sound"><span>06</span> Style and sound guide</a>
+        <a href="#build-plan"><span>07</span> Two-week build plan</a>
+      </nav>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="introduction"
+        aria-labelledby="introduction-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">01</p>
+          <h2 id="introduction-title">Introduce the game</h2>
+        </div>
+        <div class="proposal-copy proposal-copy--lead">
+          <p>
+            <em>The Room Remembers</em> places a featureless floating figure inside
+            a soft-gray childhood bedroom illuminated by flowing color. Important
+            objects appear in stark black, making them feel jarring and significant
+            within the gentle environment.
+          </p>
+          <p>
+            By examining drawings, toys, trophies, medals, photographs, and a letter
+            from Mom, the player uncovers fragments of a forgotten past. Peeling back
+            the wallpaper reveals an inverse version of the room. The player must use
+            what they remember to return displaced objects to their original locations
+            and find a way home.
+          </p>
+          <p>
+            The experience moves from warmth and curiosity to confusion and uneasy
+            recognition. Its ending leaves the player uncertain whether they escaped
+            the hallucination or entered another version of it.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="case-study"
+        aria-labelledby="case-study-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">02</p>
+          <h2 id="case-study-title">Case study: <em>Doppelpartment</em></h2>
+        </div>
+
+        <div class="proposal-copy">
+          <p>
+            I played <em>Doppelpartment</em>, a browser game by independent developer
+            A. V. Dossow. The player manages an apartment building, learns about its
+            tenants, and decides who may have been replaced by a doppelganger. Dossow
+            is credited with the story, art, music, maps, development, planning, and
+            game design, with additional sound and technology resources credited in
+            the shipped game.
+          </p>
+        </div>
+
+        <div class="source-list" aria-label="Doppelpartment research sources">
+          <a href="https://avdossow.itch.io/doppelpartment" target="_blank" rel="noopener noreferrer">Official game page</a>
+          <a href="https://itch.io/post/13468167" target="_blank" rel="noopener noreferrer">Randomization and clues</a>
+          <a href="https://itch.io/post/14004923" target="_blank" rel="noopener noreferrer">Repeat visits and hidden routes</a>
+          <a href="https://itch.io/post/13468258" target="_blank" rel="noopener noreferrer">Pacing and interaction</a>
+          <a href="https://itch.io/post/13468147" target="_blank" rel="noopener noreferrer">Mutation and concept</a>
+          <a href="https://html-classic.itch.zone/html/14379795/Doppelpartment%20-%20BROWSER%20VERSION/data/CommonEvents.json" target="_blank" rel="noopener noreferrer">Shipped credits</a>
+        </div>
+
+        <h3 class="proposal-subheading">Three meaningful moments</h3>
+        <div class="moment-grid">
+          <article class="proposal-card">
+            <p class="card-number">01</p>
+            <h4>Naming the tenants</h4>
+            <p>
+              Choosing names made the residents easier to remember and gave the later
+              accusation list a more personal feeling.
+            </p>
+          </article>
+          <article class="proposal-card">
+            <p class="card-number">02</p>
+            <h4>Uncertainty from the start</h4>
+            <p>
+              The title and cover suggested that something was wrong without revealing
+              what would happen, allowing uncertainty to guide the first playthrough.
+            </p>
+          </article>
+          <article class="proposal-card">
+            <p class="card-number">03</p>
+            <h4>Freedom before judgment</h4>
+            <p>
+              Free exploration and dialogue made the building feel familiar before the
+              soldier arrived and asked for a decision at the end of the night.
+            </p>
+          </article>
+        </div>
+
+        <h3 class="proposal-subheading">Five player-action events</h3>
+        <div class="event-list">
+          <article class="event-card">
+            <h4><span>01</span> Approach the refrigerator</h4>
+            <dl>
+              <div><dt>Player</dt><dd>Opens it and chooses what to eat.</dd></div>
+              <div><dt>Game</dt><dd>Responds with a menu and immediate audiovisual feedback.</dd></div>
+              <div><dt>Learning</dt><dd>Introduces the game’s low-risk interaction language.</dd></div>
+            </dl>
+          </article>
+          <article class="event-card">
+            <h4><span>02</span> Knock on a tenant’s door</h4>
+            <dl>
+              <div><dt>Player</dt><dd>Selects how to greet or question the tenant.</dd></div>
+              <div><dt>Game</dt><dd>Changes the dialogue while keeping the investigation moving.</dd></div>
+              <div><dt>Learning</dt><dd>Builds familiarity through repeated conversation.</dd></div>
+            </dl>
+          </article>
+          <article class="event-card">
+            <h4><span>03</span> Answer the soldier</h4>
+            <dl>
+              <div><dt>Player</dt><dd>Chooses who they believe is the doppelganger.</dd></div>
+              <div><dt>Game</dt><dd>Records the accusation and delays its consequence until later.</dd></div>
+              <div><dt>Learning</dt><dd>Turns observation into responsibility and uncertainty.</dd></div>
+            </dl>
+          </article>
+          <article class="event-card">
+            <h4><span>04</span> Go to bed</h4>
+            <dl>
+              <div><dt>Player</dt><dd>Ends the day and enters a dream sequence.</dd></div>
+              <div><dt>Game</dt><dd>Uses sleep to transition into the next day and reveal delayed feedback.</dd></div>
+              <div><dt>Learning</dt><dd>Establishes a repeatable daily rhythm.</dd></div>
+            </dl>
+          </article>
+          <article class="event-card">
+            <h4><span>05</span> Read the bulletin</h4>
+            <dl>
+              <div><dt>Player</dt><dd>Checks the tenant list and payment status.</dd></div>
+              <div><dt>Game</dt><dd>Organizes a large cast and records persistent changes.</dd></div>
+              <div><dt>Learning</dt><dd>Provides an external memory aid for the investigation.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <h3 class="proposal-subheading">Gameplay sequence</h3>
+        <div class="case-gallery">
+          <figure>
+            <img
+              src="assets/images/doppelpartment-apartment.jpg"
+              alt="Doppelpartment apartment room with a tenant, computer, and task counter"
+              width="1800"
+              height="1085"
+              loading="lazy"
+            />
+            <figcaption>1. The apartment hub establishes the daily routine and task counter.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/images/doppelpartment-soldier.jpg"
+              alt="Doppelpartment soldier explaining that a gas affects humans and doppelgangers"
+              width="1800"
+              height="1085"
+              loading="lazy"
+            />
+            <figcaption>2. The soldier complicates the rules by explaining that mutation is unreliable evidence.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/images/doppelpartment-mutation.jpg"
+              alt="Doppelpartment character Cabe with visibly elongated limbs"
+              width="1800"
+              height="1085"
+              loading="lazy"
+            />
+            <figcaption>3. Cabe’s altered body makes visual judgment feel immediate but uncertain.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/images/doppelpartment-roster.jpg"
+              alt="Doppelpartment tenant roster showing portraits and payment status"
+              width="1800"
+              height="1058"
+              loading="lazy"
+            />
+            <figcaption>4. The roster externalizes memory and tracks progress across the building.</figcaption>
+          </figure>
+        </div>
+
+        <aside class="proposal-callout">
+          <h3>What I learned</h3>
+          <p>
+            The strongest structure is a familiar baseline followed by meaningful
+            deviation. Ordinary routines teach the player what “normal” looks and
+            sounds like; later changes turn that knowledge into evidence. For my game,
+            the first bedroom must therefore be memorable before it becomes distorted.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="ai-discussion"
+        aria-labelledby="ai-discussion-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">03</p>
+          <h2 id="ai-discussion-title">Critical discussion with AI</h2>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="proposal-card">
+            <h3>What AI found and I verified</h3>
+            <ul>
+              <li>Doppelgangers are randomized and use altered dialogue and visual clues.</li>
+              <li>Repeat visits contain character routes that are easy to miss.</li>
+              <li>The creator acknowledged that progressive mutation can conflict with the identification concept.</li>
+            </ul>
+          </article>
+          <article class="proposal-card proposal-card--muted">
+            <h3>Gaps in the evidence</h3>
+            <ul>
+              <li>No creator source explains why players name the tenants.</li>
+              <li>No verified source establishes a political or philosophical thesis.</li>
+              <li>No development diary explains the intended emotional arc of the soundtrack.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ai-exchange" aria-label="Short exchange showing a revised AI analysis">
+          <p><strong>AI:</strong> Choosing names may make the player more attached to the tenants and more hesitant to report them.</p>
+          <p><strong>Bella:</strong> Imagine the moment without choosing the names. Treat your answer as a hypothesis and propose a comparison.</p>
+          <p><strong>Revised analysis:</strong> Chosen names may improve memory and ownership, but fixed names might make tenants feel more like authored individuals. A small test could compare recall, attachment, and hesitation across two otherwise identical versions.</p>
+        </div>
+
+        <div class="proposal-copy">
+          <h3 class="proposal-subheading proposal-subheading--compact">My conclusion</h3>
+          <p>
+            Naming may support memory and personal investment, but that interpretation
+            cannot be presented as the creator’s intention. The more strongly supported
+            lesson is that the game teaches a baseline and then makes the player notice
+            deviations from it.
+          </p>
+          <p>
+            This adaptive research process changed my design. <em>The Room Remembers</em>
+            will keep movement, object locations, and interaction cues consistent enough
+            to learn in the first room. Uncertainty will come from changing memories,
+            colors, sounds, and object meaning—not from unclear controls. The central
+            reconstruction mechanic asks the player to return objects to remembered
+            locations and reconsider mistakes without losing their way through the interface.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="narrative"
+        aria-labelledby="narrative-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">04</p>
+          <h2 id="narrative-title">Narrative and concept</h2>
+        </div>
+
+        <div class="narrative-grid">
+          <article>
+            <h3>Hallucination</h3>
+            <p>
+              My interpretation of hallucination is a world where the player cannot be
+              certain what reality is. I want the player to question how they decide
+              what is true within the game.
+            </p>
+          </article>
+          <article>
+            <h3>The game world</h3>
+            <p>
+              The setting is a simple childhood bedroom filled with drawings, notes,
+              toys, stuffed animals, trophies, medals, and other signs that the room is
+              well loved. The memories feel true, but their details are jumbled.
+            </p>
+          </article>
+          <article>
+            <h3>The player’s role</h3>
+            <p>
+              The player explores the room to remember who they are and how to get home.
+              They observe objects, learn the original layout, and later return displaced
+              objects to the locations they remember.
+            </p>
+          </article>
+          <article>
+            <h3>How the experience develops</h3>
+            <p>
+              Peeling wallpaper reveals a new perspective and causes the bedroom to fall
+              apart. The player must reconstruct the room before it is lost to the ether,
+              but the final familiar space still contains one detail that feels wrong.
+            </p>
+          </article>
+        </div>
+
+        <aside class="proposal-callout">
+          <h3>How the references informed it</h3>
+          <p>
+            <em>Doppelpartment</em> showed how an ordinary place can establish a baseline
+            before altered dialogue and imagery create doubt. I am adapting that structure
+            to spatial memory: the bedroom first becomes familiar through personal objects,
+            then the inverse room tests what the player remembers. The concept artwork
+            informed the warm-to-cool transition, flowing character, and contrast between
+            a gentle environment and jarring objects of importance.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="player-journey"
+        aria-labelledby="player-journey-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">05</p>
+          <h2 id="player-journey-title">Interaction and player journey</h2>
+        </div>
+
+        <p class="proposal-lead">
+          The interaction moves from observation to exploration and finally to spatial
+          reconstruction. The player learns the room before the game asks them to trust
+          their memory of it.
+        </p>
+
+        <h3 class="proposal-subheading">Flowchart</h3>
+        <ol class="journey-flow">
+          <li>
+            <span>Opening</span>
+            <strong>Enter the room</strong>
+            <p>Learn to float, look, and examine.</p>
+          </li>
+          <li>
+            <span>Stage 01</span>
+            <strong>Read the letter</strong>
+            <p>Moving letters resolve into “I love you. Mom.”</p>
+          </li>
+          <li>
+            <span>Stage 02</span>
+            <strong>Peel the wallpaper</strong>
+            <p>The familiar room collapses into a garbled version.</p>
+          </li>
+          <li>
+            <span>Stage 03</span>
+            <strong>Reconstruct the room</strong>
+            <p>Return objects to remembered locations.</p>
+          </li>
+          <li>
+            <span>Ending</span>
+            <strong>Almost home</strong>
+            <p>Mom returns the letter, but something is wrong.</p>
+          </li>
+        </ol>
+
+        <h3 class="proposal-subheading">Storyboard</h3>
+        <div class="storyboard-grid">
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--warm" aria-hidden="true"><span>01</span><b>Float</b></div>
+            <h4>Entering the bedroom</h4>
+            <p><strong>Player:</strong> Tests movement and looks around.</p>
+            <p><strong>Game:</strong> Objects react subtly as the room is introduced.</p>
+            <p><strong>Continue:</strong> Attention moves toward the bed.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--warm" aria-hidden="true"><span>02</span><b>Notice</b></div>
+            <h4>Finding the letter</h4>
+            <p><strong>Player:</strong> Approaches the object on the bed.</p>
+            <p><strong>Game:</strong> The view pans down toward the page.</p>
+            <p><strong>Continue:</strong> The letter opens for inspection.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--letter" aria-hidden="true"><span>03</span><b>Read</b></div>
+            <h4>The message resolves</h4>
+            <p><strong>Player:</strong> Tries to follow the moving letters.</p>
+            <p><strong>Game:</strong> “I love you. Mom.” becomes legible.</p>
+            <p><strong>Continue:</strong> Search for related memories.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--memory" aria-hidden="true"><span>04</span><b>Explore</b></div>
+            <h4>Learning the room</h4>
+            <p><strong>Player:</strong> Examines drawings, toys, and awards.</p>
+            <p><strong>Game:</strong> Each reveals a sound or memory fragment.</p>
+            <p><strong>Continue:</strong> The room becomes familiar.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--tear" aria-hidden="true"><span>05</span><b>Peel</b></div>
+            <h4>Pulling the wallpaper</h4>
+            <p><strong>Player:</strong> Interacts with a loose edge.</p>
+            <p><strong>Game:</strong> The room tears apart into layers.</p>
+            <p><strong>Continue:</strong> Enter the inverse room.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--inverse" aria-hidden="true"><span>06</span><b>Compare</b></div>
+            <h4>Inside the garbled room</h4>
+            <p><strong>Player:</strong> Compares displaced objects with memory.</p>
+            <p><strong>Game:</strong> Familiar objects appear altered.</p>
+            <p><strong>Continue:</strong> Choose where each object belongs.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--restore" aria-hidden="true"><span>07</span><b>Restore</b></div>
+            <h4>Reconstructing the space</h4>
+            <p><strong>Player:</strong> Returns objects to remembered locations.</p>
+            <p><strong>Game:</strong> Correct placements restore color and sound.</p>
+            <p><strong>Continue:</strong> A route home appears.</p>
+          </article>
+          <article class="storyboard-card">
+            <div class="storyboard-frame storyboard-frame--ending" aria-hidden="true"><span>08</span><b>Doubt</b></div>
+            <h4>The repeated letter</h4>
+            <p><strong>Player:</strong> Accepts the letter from Mom.</p>
+            <p><strong>Game:</strong> The message returns with one wrong detail.</p>
+            <p><strong>Continue:</strong> The game ends without confirming reality.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="style-sound"
+        aria-labelledby="style-sound-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">06</p>
+          <h2 id="style-sound-title">Style and sound guide</h2>
+        </div>
+
+        <div class="visual-reference">
+          <figure>
+            <img
+              src="assets/images/room-remembers-concept.jpg"
+              alt="Concept artwork showing warm and inverse versions of The Room Remembers bedroom"
+              width="1600"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Primary visual reference: Bella Maguire with ChatGPT, 2026.</figcaption>
+          </figure>
+          <ol class="annotation-list">
+            <li><span>1</span><p><strong>Environment</strong> — Soft-gray, two-dimensional, and quiet enough for important objects to stand out.</p></li>
+            <li><span>2</span><p><strong>Flowing color</strong> — Coral, yellow, lavender, pink, and cyan move through the character like illuminated ribbons.</p></li>
+            <li><span>3</span><p><strong>Important objects</strong> — Near-black is used sparingly so story-critical items feel jarring.</p></li>
+            <li><span>4</span><p><strong>Inverse room</strong> — Cool blue and violet values reverse the warmth without making the space unrecognizable.</p></li>
+          </ol>
+        </div>
+
+        <h3 class="proposal-subheading">Working palette</h3>
+        <div class="palette" aria-label="Proposed game color palette">
+          <div class="swatch swatch--gray"><span>Soft gray</span><code>#D9D7D4</code></div>
+          <div class="swatch swatch--cream"><span>Warm cream</span><code>#F4E7DE</code></div>
+          <div class="swatch swatch--coral"><span>Coral</span><code>#F29A91</code></div>
+          <div class="swatch swatch--lavender"><span>Lavender</span><code>#B7A6D9</code></div>
+          <div class="swatch swatch--cyan"><span>Cyan</span><code>#79DCE5</code></div>
+          <div class="swatch swatch--ink"><span>Important</span><code>#111111</code></div>
+        </div>
+
+        <div class="style-grid">
+          <article>
+            <h3>Typography</h3>
+            <p>
+              Atkinson Hyperlegible Next is proposed for interface text and dialogue so
+              the controls remain clear while the world distorts. The letter uses a
+              softer handwritten treatment, but its final message resolves clearly.
+            </p>
+            <a href="https://www.brailleinstitute.org/freefont/" target="_blank" rel="noopener noreferrer">Braille Institute typeface source</a>
+          </article>
+          <article>
+            <h3>Imagery</h3>
+            <p>
+              Soft 2D illustration keeps the room intimate. Personal objects overlap
+              naturally rather than forming a perfect display, and remain recognizable
+              after their positions, colors, or scale change.
+            </p>
+          </article>
+          <article>
+            <h3>Interface</h3>
+            <p>
+              There is no permanent inventory or large status display. A quiet glow and
+              short prompt identify interactive objects. Correct placements restore part
+              of the room; mistakes briefly increase distortion and allow another attempt.
+            </p>
+          </article>
+          <article>
+            <h3>Motion</h3>
+            <p>
+              The character floats with a soft colored trail. Object motion remains
+              restrained until the wallpaper tears, when the room separates into layers.
+              Reduced-motion settings replace large transitions with gentle fades.
+            </p>
+          </article>
+        </div>
+
+        <aside class="proposal-callout reference-note">
+          <h3>Interaction reference</h3>
+          <p>
+            <em>Doppelpartment</em> informs the clear separation between environment,
+            interactive subjects, dialogue, and player feedback. Its pixel-art drawing
+            style is not being copied. Credit: A. V. Dossow.
+          </p>
+          <a href="https://avdossow.itch.io/doppelpartment" target="_blank" rel="noopener noreferrer">View the official game page</a>
+        </aside>
+
+        <h3 class="proposal-subheading">Audio direction</h3>
+        <div class="proposal-copy">
+          <p>
+            The normal room uses a gentle hum with ethereal, light, and airy music.
+            Environmental sounds share related pitches so the room feels comfortable and
+            harmonious. As the world becomes jumbled, familiar sounds stretch, detune, and
+            gain longer reverb. The change is gradual rather than a jump scare.
+          </p>
+          <p>
+            A photograph contains faint children laughing, while a stuffed animal emits
+            a soft squeak. Correctly placed objects return sounds to their original pitch
+            and reduce the reverb. Incorrect placements produce a brief detuned echo.
+          </p>
+        </div>
+
+        <div class="sound-reference-heading">
+          <h3 class="proposal-subheading proposal-subheading--compact">Sound references</h3>
+          <p>Nothing plays automatically. Each reference opens only when the visitor selects it.</p>
+        </div>
+        <div class="sound-reference-list">
+          <article>
+            <h4>Airy ambient foundation</h4>
+            <p>Reference for the peaceful musical layer beneath object sounds.</p>
+            <a href="https://freesound.org/people/deadrobotmusic/sounds/808032/" target="_blank" rel="noopener noreferrer">deadrobotmusic — Ethereal Choir Pad, CC0</a>
+          </article>
+          <article>
+            <h4>Distant childhood memory</h4>
+            <p>Reference for faint laughter connected to the photograph.</p>
+            <a href="https://freesound.org/people/craigsmith/sounds/479837/" target="_blank" rel="noopener noreferrer">craigsmith — Children Laughing, CC0</a>
+          </article>
+          <article>
+            <h4>Stuffed-animal response</h4>
+            <p>Reference for a short squeak softened to feel familiar rather than comic.</p>
+            <a href="https://freesound.org/people/qubodup/sounds/827431/" target="_blank" rel="noopener noreferrer">qubodup — Squeaky Toy Squeaks, CC0</a>
+          </article>
+          <article>
+            <h4>Inverse-room transition</h4>
+            <p>Reference for a slowly expanding dissonance during the transformation.</p>
+            <a href="https://freesound.org/people/Sclolex/sounds/216670/" target="_blank" rel="noopener noreferrer">Sclolex — complexharmonicdrone.wav, CC0</a>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="page-frame project-section proposal-section"
+        id="build-plan"
+        aria-labelledby="build-plan-title"
+      >
+        <div class="proposal-section__heading">
+          <p class="section-number">07</p>
+          <h2 id="build-plan-title">Two-week build plan</h2>
+        </div>
+
+        <p class="proposal-lead">
+          The scope is one complete, testable room sequence rather than a larger but
+          unfinished game.
+        </p>
+
+        <div class="week-grid">
+          <article>
+            <p class="week-label">Week 2</p>
+            <h3>Build the playable foundation</h3>
+            <p>
+              I will begin with gameplay before detailed art or sound. The first build
+              will include floating movement, one bedroom, object examination, the letter,
+              wallpaper transition, normal and garbled room states, and three objects that
+              can be returned to remembered locations.
+            </p>
+            <p>
+              A first art pass will establish the soft-gray room, flowing colors, and
+              limited black objects. Audio will remain placeholder where necessary.
+            </p>
+            <p class="week-outcome"><strong>Outcome:</strong> A playable sequence from entering the room through one short reconstruction.</p>
+          </article>
+          <article>
+            <p class="week-label">Week 3</p>
+            <h3>Test and refine</h3>
+            <p>
+              I will test movement, object prompts, discovery of the letter and wallpaper,
+              readability of the moving text, memory difficulty, placement feedback, and
+              whether the ending communicates uncertainty.
+            </p>
+            <p>
+              The results will guide adjustments to pacing, object positions, character
+              motion, artwork, color, ambient music, object sounds, discordant tones, and
+              reverb.
+            </p>
+            <p class="week-outcome"><strong>Outcome:</strong> One focused, complete prototype suitable for a short playtest.</p>
+          </article>
+        </div>
+      </section>
+
+      <nav class="page-frame project-footer" aria-label="Project navigation">
+        <a href="studio.html">Previous: FutureSpace Studio</a>
+        <a href="index.html">Back to home</a>
+      </nav>
+    </main>
+  </body>
+</html>
