@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Room Remembers, a three-level surreal browser game by Bella Maguire."
+    />
+    <title>The Room Remembers Game — Bella Maguire</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-page game-project-page">
+    <header class="page-frame project-nav">
+      <a class="project-nav__name" href="index.html">Bella Maguire</a>
+      <nav class="project-nav__links" aria-label="Portfolio navigation">
+        <a href="index.html">Home</a>
+        <a href="album-cover.html">Album Cover</a>
+        <a href="studio.html">FutureSpace Studio</a>
+        <a href="game-proposal.html">Game Proposal</a>
+        <a href="game.html" aria-current="page">Playable Game</a>
+      </nav>
+    </header>
+
+    <main>
+      <header class="page-frame project-header game-project-header">
+        <p class="game-project-kicker">Playable browser game</p>
+        <h1 class="project-heading">The Room Remembers</h1>
+        <p class="project-intro">
+          A three-level surreal exploration game about finding memories in a
+          childhood bedroom and questioning which version of the room is real.
+        </p>
+      </header>
+
+      <figure class="page-frame game-project-hero">
+        <img
+          src="assets/images/room-remembers-concept.jpg"
+          alt="A warm childhood bedroom opening into an inverted blue version of the room"
+          width="1600"
+          height="800"
+        />
+        <figcaption>
+          Concept by Bella Maguire; image generated with ChatGPT, 2026.
+        </figcaption>
+      </figure>
+
+      <section
+        class="page-frame project-section game-project-launch"
+        aria-labelledby="play-game-title"
+      >
+        <div class="game-project-launch__copy">
+          <h2 id="play-game-title">Play the game</h2>
+          <p>
+            Find Mom’s letter, the medal, and the stuffed animal. Each memory
+            adds one segment to the meter, and the third level turns the room
+            into a dark inverse of the space you learned.
+          </p>
+          <div class="game-project-actions">
+            <a class="game-launch-link" href="game/index.html">Play the game</a>
+            <a class="game-secondary-link" href="game-proposal.html">View the proposal</a>
+          </div>
+        </div>
+
+        <aside class="game-control-card" aria-labelledby="game-controls-title">
+          <h3 id="game-controls-title">Controls</h3>
+          <ul>
+            <li>Move with mouse hover, Arrow keys, or WASD.</li>
+            <li>Hold the mouse, Space, or Enter to remember.</li>
+            <li>Pause with P, Escape, or the pause button.</li>
+          </ul>
+          <p>The game waits for you to start each new level.</p>
+        </aside>
+      </section>
+
+      <section
+        class="page-frame project-section"
+        aria-labelledby="completed-build-title"
+      >
+        <h2 id="completed-build-title">Completed browser prototype</h2>
+        <div class="game-level-grid">
+          <article>
+            <p class="game-level-label">Level 1</p>
+            <h3>Mom’s letter</h3>
+            <p>Learn the normal room and find the first black memory object.</p>
+          </article>
+          <article>
+            <p class="game-level-label">Level 2</p>
+            <h3>The medal</h3>
+            <p>Search the familiar room again while the total memory score remains.</p>
+          </article>
+          <article>
+            <p class="game-level-label">Level 3</p>
+            <h3>The stuffed animal</h3>
+            <p>Enter the inverse room and find the final white memory object.</p>
+          </article>
+        </div>
+      </section>
+
+      <nav class="page-frame project-footer" aria-label="Project navigation">
+        <a href="game-proposal.html">Previous: Game Proposal</a>
+        <a href="index.html">Back to home</a>
+      </nav>
+    </main>
+  </body>
+</html>
