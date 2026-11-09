@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Room Remembers, a three-level surreal browser game about unreliable memory."
+    />
+    <title>The Room Remembers</title>
+    <link rel="stylesheet" href="styles.css?v=4" />
+  </head>
+  <body>
+    <main class="game-shell" data-game-shell>
+      <nav class="game-return" aria-label="Portfolio navigation">
+        <a href="../game.html">← Back to project</a>
+      </nav>
+
+      <header class="game-heading">
+        <p class="eyebrow">The Room Remembers</p>
+        <h1>Find what the room is holding.</h1>
+      </header>
+
+      <section
+        class="game-frame"
+        aria-label="The Room Remembers game"
+        data-game-frame
+      >
+        <div
+          class="bedroom-board"
+          id="bedroom-board"
+          role="application"
+          aria-label="A 20 by 20 childhood bedroom. Move with the mouse, Arrow keys, or WASD."
+          aria-describedby="controls-copy"
+          data-board
+          data-board-rows="20"
+          data-board-columns="20"
+          tabindex="-1"
+        >
+          <div class="room-flow room-flow--one" aria-hidden="true"></div>
+          <div class="room-flow room-flow--two" aria-hidden="true"></div>
+
+          <div class="room-object room-window" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="room-object room-drawings" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="room-object room-shelf" aria-hidden="true">
+            <span class="trophy"></span>
+            <span class="books"></span>
+          </div>
+          <div class="room-object room-dresser" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="room-object room-rug" aria-hidden="true"></div>
+          <div class="room-object room-bed" aria-hidden="true">
+            <span class="bed-pillow"></span>
+            <span class="bed-blanket"></span>
+            <span class="bed-rabbit"></span>
+          </div>
+
+          <div
+            class="memory-item"
+            role="img"
+            aria-label="A black letter from Mom rests on the bed"
+            data-memory-item
+          >
+            <span data-memory-display>Mom</span>
+          </div>
+
+          <div class="cartoon-cursor" aria-hidden="true" data-player-cursor>
+            <span class="cursor-ribbon cursor-ribbon--one"></span>
+            <span class="cursor-ribbon cursor-ribbon--two"></span>
+            <span class="cursor-body"></span>
+          </div>
+
+          <div class="game-hud" aria-label="Game information">
+            <p class="level-label" data-level-label>Level 1</p>
+            <div class="hud-actions">
+              <button class="icon-button" type="button" data-pause-button disabled>
+                <span aria-hidden="true">Ⅱ</span>
+                <span class="sr-only">Pause</span>
+              </button>
+              <div
+                class="memory-meter"
+                role="progressbar"
+                aria-label="Memory progress"
+                aria-valuemin="0"
+                aria-valuemax="3"
+                aria-valuenow="0"
+                aria-valuetext="0 of 3 memories complete"
+                data-memory-meter
+              >
+                <span class="meter-label">Memory</span>
+                <div class="meter-track">
+                  <span class="meter-segment" data-meter-segment="3"></span>
+                  <span class="meter-segment" data-meter-segment="2"></span>
+                  <span
+                    class="meter-segment is-current"
+                    data-meter-segment="1"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="game-message" data-game-message>
+            The room is waiting.
+          </p>
+
+          <div class="game-overlay" data-ready-overlay>
+            <div class="overlay-panel">
+              <p class="overlay-kicker">Level one</p>
+              <h2>One memory is waiting.</h2>
+              <p>
+                Move the cartoon cursor with your mouse, the Arrow keys, or
+                WASD. When it reaches the black letter, hold the mouse button,
+                Space, or Enter to remember.
+              </p>
+              <button class="primary-button" type="button" data-start-button>
+                Start
+              </button>
+            </div>
+          </div>
+
+          <div class="game-overlay" data-pause-overlay hidden>
+            <div class="overlay-panel">
+              <p class="overlay-kicker">Paused</p>
+              <h2>The room is waiting.</h2>
+              <p>Nothing will change. Resume when you are ready.</p>
+              <div class="overlay-actions">
+                <button class="primary-button" type="button" data-resume-button>
+                  Resume
+                </button>
+                <button class="secondary-button" type="button" data-restart-button>
+                  Restart run
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-overlay" data-transition-overlay hidden>
+            <div class="overlay-panel">
+              <p class="overlay-kicker">Memory found</p>
+              <h2 data-transition-heading>Level complete.</h2>
+              <p data-transition-copy>Keep remembering.</p>
+              <button class="primary-button" type="button" data-next-level-button>
+                Start Next Level
+              </button>
+            </div>
+          </div>
+
+          <div class="game-overlay" data-game-complete-overlay hidden>
+            <div class="overlay-panel">
+              <p class="overlay-kicker">All memories found</p>
+              <h2>Game complete.</h2>
+              <p>
+                All three memories returned. Final score:
+                <strong data-final-score>30 points.</strong> Something still
+                feels wrong.
+              </p>
+              <button class="primary-button" type="button" data-play-again-button>
+                Play Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="controls-copy" id="controls-copy">
+        Move: mouse hover, Arrow keys, or WASD <span aria-hidden="true">·</span>
+        Remember: hold mouse, Space, or Enter <span aria-hidden="true">·</span>
+        Pause: P or the pause button
+      </p>
+      <p class="sr-only" role="status" aria-live="polite" data-live-status>
+        Ready. Press Start to begin.
+      </p>
+    </main>
+
+    <script type="module" src="game.js?v=4"></script>
+  </body>
+</html>
