@@ -10,6 +10,15 @@ export const LEVELS = Object.freeze([
   Object.freeze({
     number: 1,
     world: "normal",
+    boardLabel:
+      "A warm 20 by 20 childhood bedroom. Move with the mouse, Arrow keys, or WASD.",
+    response: Object.freeze({
+      title: "Mom's letter",
+      memory:
+        "Mom left this on my pillow before every early shift. I kept folding it into the same four squares.",
+      cue: "Paper rustles, and two warm notes answer.",
+      sound: "letter",
+    }),
     item: Object.freeze({
       id: "letter",
       label: "Mom's letter",
@@ -21,17 +30,35 @@ export const LEVELS = Object.freeze([
   Object.freeze({
     number: 2,
     world: "normal",
+    boardLabel:
+      "The same 20 by 20 childhood bedroom, but familiar details have shifted. Move with the mouse, Arrow keys, or WASD.",
+    response: Object.freeze({
+      title: "The medal",
+      memory:
+        "I finished second, but Mom cheered as if I had won. I hung it where the morning light could reach it.",
+      cue: "A narrow gold reflection crosses the shelf as a small metal chime rings.",
+      sound: "medal",
+    }),
     item: Object.freeze({
       id: "medal",
       label: "Medal",
       display: "★",
-      row: 4,
-      column: 16,
+      row: 6,
+      column: 12,
     }),
   }),
   Object.freeze({
     number: 3,
     world: "inverse",
+    boardLabel:
+      "A dark inverse 20 by 20 childhood bedroom. Familiar landmarks remain, but their details are wrong. Move with the mouse, Arrow keys, or WASD.",
+    response: Object.freeze({
+      title: "Button, the stuffed rabbit",
+      memory:
+        "Button stayed under my arm whenever storms shook the window. Mom repaired one ear with blue thread.",
+      cue: "Three quiet lullaby notes meet a distant window rattle.",
+      sound: "stuffed-animal",
+    }),
     item: Object.freeze({
       id: "stuffed-animal",
       label: "Stuffed animal",

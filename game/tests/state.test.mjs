@@ -44,6 +44,16 @@ test("the board is 20 by 20 and the run begins ready", () => {
   assert.equal(state.items.length, 3);
 });
 
+test("every level includes an accessible room description and memory response", () => {
+  for (const level of LEVELS) {
+    assert.ok(level.boardLabel.length > 20);
+    assert.ok(level.response.title.length > 0);
+    assert.ok(level.response.memory.length > 20);
+    assert.ok(level.response.cue.length > 10);
+    assert.ok(level.response.sound.length > 0);
+  }
+});
+
 test("movement waits for Start, records direction, and stays inside the board", () => {
   const ready = createInitialState();
   assert.strictEqual(moveCursor(ready, -1, 0), ready);
