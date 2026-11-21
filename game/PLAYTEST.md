@@ -287,3 +287,17 @@ Show the Level 2 and Level 3 medal states to first-time players. Ask whether the
 ### Physical-device check still needed
 
 On an iPhone or Android phone, repeat: **Start** → drag on an empty part of the room → release before a memory hold completes → touch and hold the memory → tap **Start Next Level**. Confirm that the room does not scroll while dragging, the surrounding page can still scroll outside active play, and each memory is counted only once.
+
+## Level 2 medal-response spacing correction
+
+**Recorded:** November 21, 2026
+
+**Status:** Implementation and browser checks passed
+
+### Actual observation and correction
+
+- At Level 2 completion, the two medal ribbons extended below the circular medal and entered the row containing “The medal.” The measured overlap was about 5.6 pixels in the wide view and was larger at the phone breakpoint.
+- A medal-specific bottom margin now reserves the ribbons' full visual depth. This enlarges only the yellow medal response box and leaves the letter and stuffed-rabbit response layouts unchanged.
+- The ribbon-to-label clearance measured about 6.9 pixels in the wide view and 6.4 pixels at 390 pixels. The label-to-memory-text gap also remained positive, and every element stayed inside the yellow response box.
+- At 390 pixels, the overlay required no internal scrolling and the page retained equal 390-pixel client and scroll widths.
+- The letter and stuffed-rabbit response margins remained at their original phone values. Their labels stayed separate from their illustrations, and completing the rabbit still produced the 30-point game-complete state.

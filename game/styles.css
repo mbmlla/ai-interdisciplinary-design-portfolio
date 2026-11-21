@@ -2108,6 +2108,7 @@ button:focus-visible,
 .memory-response[data-response="medal"] .memory-response__visual {
   width: 2.85rem;
   height: 2.85rem;
+  margin-bottom: 1.3rem;
   border: 0.13rem solid var(--ink);
   border-radius: 50%;
   background: var(--yellow);
