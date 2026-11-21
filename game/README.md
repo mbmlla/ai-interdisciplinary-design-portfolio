@@ -1,8 +1,6 @@
 # The Room Remembers — Three-Level Browser Demo
 
-This playable build uses plain HTML, CSS, and JavaScript with no package installation or build step. The square 20 × 20 bedroom works with mouse hover or keyboard movement.
-
-The layout scales to a phone-sized screen, but touch-only movement is not part of this build yet.
+This playable build uses plain HTML, CSS, and JavaScript with no package installation or build step. The square 20 × 20 bedroom works with finger drag, mouse hover, or keyboard movement.
 
 ## Level progression
 
@@ -57,14 +55,15 @@ From this `game` folder, run:
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173` in a desktop browser.
+Then open `http://localhost:4173` in a browser.
 
 ## Controls
 
 - Select **Start** before the board accepts input.
-- Move the cartoon cursor by hovering across the board with a mouse, or use the Arrow keys or WASD.
+- On a phone or tablet, drag a finger across the room to move the cartoon cursor. Touching a memory snaps the cursor to its exact grid cell.
+- On a computer, move by hovering across the board with a mouse, or use the Arrow keys or WASD.
 - Hovering any visible part of a memory object snaps the cartoon cursor to that object's exact grid cell.
-- When the cursor reaches the current memory item, hold the mouse button, Space, or Enter for 1.2 seconds.
+- When the cursor reaches the current memory item, touch and hold, hold the mouse button, Space, or Enter for 1.2 seconds.
 - Pause with **P**, Escape, or the on-screen Pause button.
 - Mute or restore all game audio with the music-note button.
 - Returning to a blurred or hidden tab never resumes automatically; select **Resume**.

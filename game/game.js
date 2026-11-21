@@ -15,7 +15,7 @@ import {
   snapshotState,
   startGame,
   startNextLevel,
-} from "./game-state.mjs";
+} from "./game-state.mjs?v=2";
 
 const board = document.querySelector("[data-board]");
 const gameShell = document.querySelector("[data-game-shell]");
@@ -95,6 +95,7 @@ let completionSoundTimer = null;
 let pointerVisual = null;
 let pointerMotionFrame = null;
 let motionPulseTimer = null;
+let activeTouchPointerId = null;
 
 for (const [trackId, track] of audioTracks) {
   track.volume = audioVolumes[trackId] ?? 0.8;
@@ -454,7 +455,7 @@ function renderMessage() {
 
   if (canFocusMemory(state)) {
     gameMessage.textContent =
-      "Memory found. Hold the mouse button, Space, or Enter to remember.";
+      "Memory found. Touch and hold, hold the mouse button, Space, or Enter to remember.";
     return;
   }
 
@@ -543,6 +544,7 @@ function finishFocusTick() {
     return;
   }
 
+  clearActiveTouchPointer();
   const levelDefinition = getLevelDefinition(state.level);
   const memoryResponse = levelDefinition.response;
   pauseBackgroundSound();
@@ -608,7 +610,7 @@ function handleMovement(rowDelta, columnDelta, announce = true) {
 
   if (canFocusMemory(state)) {
     setStatus(
-      `${getActiveMemory(state).label} found. Hold the mouse button, Space, or Enter to remember.`,
+      `${getActiveMemory(state).label} found. Touch and hold, hold the mouse button, Space, or Enter to remember.`,
     );
   } else if (announce) {
     setStatus(
@@ -619,8 +621,9 @@ function handleMovement(rowDelta, columnDelta, announce = true) {
 
 function moveCursorToPointer(event) {
   if (state.phase !== "playing") return;
-  if (event.pointerType === "touch") return;
-  if (event.target.closest("button, .game-hud, .game-overlay")) return;
+  const hitTarget =
+    document.elementFromPoint(event.clientX, event.clientY) ?? event.target;
+  if (hitTarget.closest("button, .game-hud, .game-overlay")) return;
 
   const bounds = board.getBoundingClientRect();
   const normalizedX = Math.min(
@@ -632,7 +635,7 @@ function moveCursorToPointer(event) {
     Math.max(0, (event.clientY - bounds.top) / bounds.height),
   );
 
-  if (event.target.closest("[data-memory-item]")) {
+  if (hitTarget.closest("[data-memory-item]")) {
     const activeMemory = getActiveMemory(state);
     const memoryCenter = {
       x: (activeMemory.column + 0.5) / BOARD_SIZE,
@@ -667,10 +670,78 @@ function moveCursorToPointer(event) {
   queuePointerMotion(visualPosition);
 }
 
+function updateTouchFocus() {
+  if (canFocusMemory(state)) startFocus();
+  else if (focusTimer !== null || state.focusProgressMs > 0) stopFocus();
+}
+
+function clearActiveTouchPointer() {
+  if (activeTouchPointerId === null) return;
+
+  if (
+    typeof board.hasPointerCapture === "function" &&
+    board.hasPointerCapture(activeTouchPointerId)
+  ) {
+    board.releasePointerCapture(activeTouchPointerId);
+  }
+  activeTouchPointerId = null;
+}
+
+function beginTouchExploration(event) {
+  if (
+    event.pointerType !== "touch" ||
+    !event.isPrimary ||
+    state.phase !== "playing" ||
+    event.target.closest("button, .game-hud, .game-overlay")
+  ) {
+    return;
+  }
+
+  if (
+    activeTouchPointerId !== null &&
+    activeTouchPointerId !== event.pointerId
+  ) {
+    return;
+  }
+
+  event.preventDefault();
+  activeTouchPointerId = event.pointerId;
+  if (event.isTrusted && typeof board.setPointerCapture === "function") {
+    board.setPointerCapture(event.pointerId);
+  }
+  moveCursorToPointer(event);
+  updateTouchFocus();
+}
+
+function continuePointerExploration(event) {
+  if (event.pointerType !== "touch") {
+    moveCursorToPointer(event);
+    return;
+  }
+
+  if (event.pointerId !== activeTouchPointerId) return;
+  event.preventDefault();
+  moveCursorToPointer(event);
+  updateTouchFocus();
+}
+
+function endTouchExploration(event) {
+  if (
+    event.pointerType !== "touch" ||
+    event.pointerId !== activeTouchPointerId
+  ) {
+    return;
+  }
+
+  clearActiveTouchPointer();
+  stopFocus();
+}
+
 function pauseCurrentGame(message = "Game paused.") {
   pauseBackgroundSound();
   stopMemorySound();
   if (state.phase !== "playing") return;
+  clearActiveTouchPointer();
   cancelPointerMotionFrame();
   clearMotionPulse();
   stopFocus({ clear: false, renderAfter: false });
@@ -693,6 +764,7 @@ function resumeCurrentGame() {
 function performRestart() {
   stopBackgroundSound();
   stopMemorySound();
+  clearActiveTouchPointer();
   stopFocus({ clear: false, renderAfter: false });
   state = restartGame(state);
   resetVisualCursor();
@@ -741,6 +813,7 @@ for (const restartButton of restartButtons) {
 
 nextLevelButton.addEventListener("click", () => {
   stopMemorySound();
+  clearActiveTouchPointer();
   state = startNextLevel(state);
   resetVisualCursor();
   render();
@@ -753,8 +826,10 @@ nextLevelButton.addEventListener("click", () => {
 
 playAgainButton.addEventListener("click", performRestart);
 
-board.addEventListener("pointermove", moveCursorToPointer);
-board.addEventListener("pointerleave", () => {
+board.addEventListener("pointerdown", beginTouchExploration);
+board.addEventListener("pointermove", continuePointerExploration);
+board.addEventListener("pointerleave", (event) => {
+  if (event.pointerType === "touch") return;
   if (state.phase !== "playing") return;
   stopFocus();
   cancelPointerMotionFrame();
@@ -764,15 +839,18 @@ board.addEventListener("pointerleave", () => {
 });
 
 memoryItem.addEventListener("pointerdown", (event) => {
-  if (event.pointerType === "touch" || event.button !== 0) return;
+  if (event.pointerType === "touch") return;
+  if (event.button !== 0) return;
   event.preventDefault();
   startFocus();
 });
 
-window.addEventListener("pointerup", () => {
+window.addEventListener("pointerup", (event) => {
+  endTouchExploration(event);
   stopFocus();
 });
-window.addEventListener("pointercancel", () => {
+window.addEventListener("pointercancel", (event) => {
+  endTouchExploration(event);
   stopFocus();
 });
 

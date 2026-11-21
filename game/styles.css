@@ -163,6 +163,13 @@ button:focus-visible,
       var(--floor-near) 100%
     );
   transition: background 420ms ease;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.game-shell[data-phase="playing"] .bedroom-board {
+  touch-action: none;
 }
 
 .bedroom-board::after {

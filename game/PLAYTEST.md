@@ -268,3 +268,22 @@ Show Level 1 and Level 2 to first-time players without naming the changes. Ask w
 ### Recognition test still needed
 
 Show the Level 2 and Level 3 medal states to first-time players. Ask whether they recognize the inverse object as the same recovered medal and whether the white rabbit still reads as the only object they need to find.
+
+## Mobile touch-control correction
+
+**Recorded:** November 21, 2026
+
+**Status:** Touch event path and phone-width browser checks passed; physical-device confirmation remains
+
+### Actual observation and correction
+
+- The published game fit a phone-sized screen, but a mobile-device play attempt could not move the cursor or recover a memory. Inspection confirmed that the game deliberately returned early for touch movement and touch memory holds, leaving a touch-only player without an input method.
+- The corrected interaction uses the existing main action: drag a finger across the room to move the cartoon cursor, then keep touching the active memory for the same 1.2-second hold used by mouse and keyboard input. A direct touch on a small memory snaps the cursor to its exact grid cell.
+- A browser touch-event smoke test moved the cursor from the starting area to row 8, column 9. Releasing a memory touch after 0.3 seconds left the game playing at 0 points with no stored hold progress. A following continuous hold recovered Mom's letter at exactly 10 points, one completed segment, and one per-level memory.
+- A complete 390-pixel browser run still stopped at 10, 20, and 30 points. **Play Again** restored Level 1, 0 points, 0 segments, row 18, column 4, and the ready state. **Pause** and explicit **Resume** still worked.
+- At 390 pixels, the board measured 370 pixels wide and the page client and scroll widths both measured 390 pixels. The board blocks page scrolling only while play is active; overlay buttons retain normal touch behavior.
+- A clean page load reported no game warning or error. Desktop mouse hold and keyboard controls remain available.
+
+### Physical-device check still needed
+
+On an iPhone or Android phone, repeat: **Start** → drag on an empty part of the room → release before a memory hold completes → touch and hold the memory → tap **Start Next Level**. Confirm that the room does not scroll while dragging, the surrounding page can still scroll outside active play, and each memory is counted only once.

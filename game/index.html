@@ -8,7 +8,7 @@
       content="The Room Remembers, a three-level surreal browser game about unreliable memory."
     />
     <title>The Room Remembers</title>
-    <link rel="stylesheet" href="styles.css?v=25" />
+    <link rel="stylesheet" href="styles.css?v=26" />
   </head>
   <body>
     <main class="game-shell" data-game-shell>
@@ -30,7 +30,7 @@
           class="bedroom-board"
           id="bedroom-board"
           role="application"
-          aria-label="A 20 by 20 childhood bedroom. Move with the mouse, Arrow keys, or WASD."
+          aria-label="A 20 by 20 childhood bedroom. Drag a finger, use the mouse, Arrow keys, or WASD."
           aria-describedby="controls-copy"
           data-board
           data-board-rows="20"
@@ -294,9 +294,9 @@
               <p class="overlay-kicker">Level one</p>
               <h2>One memory is waiting.</h2>
               <p>
-                Move the cartoon cursor with your mouse, the Arrow keys, or
-                WASD. When it reaches the black letter, hold the mouse button,
-                Space, or Enter to remember.
+                Drag a finger or move the cartoon cursor with your mouse, the
+                Arrow keys, or WASD. When it reaches the black letter, touch
+                and hold, hold the mouse button, Space, or Enter to remember.
               </p>
               <button class="primary-button" type="button" data-start-button>
                 Start
@@ -363,8 +363,8 @@
       </section>
 
       <p class="controls-copy" id="controls-copy">
-        Move: mouse hover, Arrow keys, or WASD <span aria-hidden="true">·</span>
-        Remember: hold mouse, Space, or Enter <span aria-hidden="true">·</span>
+        Move: finger drag, mouse hover, Arrow keys, or WASD <span aria-hidden="true">·</span>
+        Remember: touch and hold, hold mouse, Space, or Enter <span aria-hidden="true">·</span>
         Pause: P or the pause button <span aria-hidden="true">·</span>
         Sound: ♪ button
       </p>
@@ -412,6 +412,6 @@
       preload="auto"
     ></audio>
 
-    <script type="module" src="game.js?v=12"></script>
+    <script type="module" src="game.js?v=13"></script>
   </body>
 </html>

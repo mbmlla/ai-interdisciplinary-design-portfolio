@@ -11,7 +11,7 @@ export const LEVELS = Object.freeze([
     number: 1,
     world: "normal",
     boardLabel:
-      "A warm 20 by 20 childhood bedroom. Move with the mouse, Arrow keys, or WASD.",
+      "A warm 20 by 20 childhood bedroom. Drag a finger, use the mouse, Arrow keys, or WASD.",
     response: Object.freeze({
       title: "Mom's letter",
       memory:
@@ -31,7 +31,7 @@ export const LEVELS = Object.freeze([
     number: 2,
     world: "normal",
     boardLabel:
-      "The same 20 by 20 childhood bedroom, but familiar details have shifted. Move with the mouse, Arrow keys, or WASD.",
+      "The same 20 by 20 childhood bedroom, but familiar details have shifted. Drag a finger, use the mouse, Arrow keys, or WASD.",
     response: Object.freeze({
       title: "The medal",
       memory:
@@ -51,7 +51,7 @@ export const LEVELS = Object.freeze([
     number: 3,
     world: "inverse",
     boardLabel:
-      "A dark inverse 20 by 20 childhood bedroom. Familiar landmarks remain, but their details are wrong. Move with the mouse, Arrow keys, or WASD.",
+      "A dark inverse 20 by 20 childhood bedroom. Familiar landmarks remain, but their details are wrong. Drag a finger, use the mouse, Arrow keys, or WASD.",
     response: Object.freeze({
       title: "Button, the stuffed rabbit",
       memory:
